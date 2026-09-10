@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-base: #0c0e12;
+    --bg-surface: #13171f;
+    --bg-elevated: #1a202c;
+    --border-subtle: #242c3d;
+    --border-muted: #2f3a4f;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-emerald: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-cyan: #38bdf8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0c0e12;
+    color: #f1f5f9;
+    font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #2e384d;
+    color: #f8fafc;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom background pattern overlays using user docs assets */
+.tech-grid-pattern {
+  position: relative;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.tech-grid-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/backgrounds/19742.jpg");
+  background-repeat: repeat;
+  background-size: 500px;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.abstract-pattern-bg {
+  position: relative;
+}
+
+.abstract-pattern-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/backgrounds/abstract_pattern_design_background_2007.jpg");
+  background-repeat: repeat;
+  background-size: 600px;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.halftone-pattern-bg {
+  position: relative;
+}
+
+.halftone-pattern-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/backgrounds/seamless_gray_halftone_pattern_in_white_background.jpg");
+  background-repeat: repeat;
+  background-size: 350px;
+  opacity: 0.03;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Editorial divider lines */
+.editorial-rule {
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0e12;
+}
+::-webkit-scrollbar-thumb {
+  background: #252d3d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #37435b;
 }
