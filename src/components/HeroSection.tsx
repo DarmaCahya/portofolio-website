@@ -149,6 +149,17 @@ export default function HeroSection() {
               </a>
 
               <a
+                href="/CV_I_Made_Darma_Cahya_Adyatma.pdf"
+                download="CV_I_Made_Darma_Cahya_Adyatma.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#161922] hover:bg-[#202737] text-[#38bdf8] border border-[#38bdf8]/40 hover:border-[#38bdf8] font-semibold text-xs font-mono transition-all backdrop-blur-sm shadow-md"
+              >
+                <Icon icon="lucide:download" className="w-4 h-4 text-[#38bdf8]" />
+                <span>Download CV</span>
+              </a>
+
+              <a
                 href="/#contact"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#090a0d]/80 hover:bg-[#161922] text-[#e5e7eb] border border-[#262c3d] text-xs font-mono transition-colors backdrop-blur-sm"
               >

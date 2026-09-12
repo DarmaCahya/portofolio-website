@@ -45,7 +45,7 @@ export default function Navbar() {
         </Link>
 
         {/* Right Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           <nav className="flex items-center gap-6 text-xs font-mono">
             {NAV_LINKS.map((link) => (
               <a
@@ -57,6 +57,17 @@ export default function Navbar() {
               </a>
             ))}
           </nav>
+
+          <a
+            href="/CV_I_Made_Darma_Cahya_Adyatma.pdf"
+            download="CV_I_Made_Darma_Cahya_Adyatma.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#161922] hover:bg-[#202737] text-[#38bdf8] border border-[#38bdf8]/40 hover:border-[#38bdf8] text-xs font-mono font-medium transition-all shadow-sm"
+          >
+            <Icon icon="lucide:download" className="w-3.5 h-3.5" />
+            <span>Download CV</span>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -85,7 +96,17 @@ export default function Navbar() {
               </a>
             ))}
           </nav>
-          <div className="pt-2">
+          <div className="pt-2 flex flex-col gap-2">
+            <a
+              href="/CV_I_Made_Darma_Cahya_Adyatma.pdf"
+              download="CV_I_Made_Darma_Cahya_Adyatma.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-mono text-[#38bdf8] bg-[#161922] border border-[#38bdf8]/40 rounded-md hover:border-[#38bdf8] transition-colors font-medium"
+            >
+              <Icon icon="lucide:download" className="w-3.5 h-3.5" />
+              <span>Download CV</span>
+            </a>
             <a
               href={`mailto:${PERSONAL_INFO.email}`}
               className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-mono text-[#f3f4f6] bg-[#161922] border border-[#262c3d] rounded-md hover:border-[#38bdf8]/50 transition-colors"

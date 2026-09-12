@@ -245,25 +245,222 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/DarmaCahya",
   },
   {
-    id: "laravel-client-company-profiles",
-    name: "Corporate Company Profile Suite (Laravel & Hostinger)",
+    id: "satria-enam-putra-perkasa",
+    name: "PT. Satria Enam Putra Perkasa — Corporate Website",
     category: "Company Profile",
     featured: true,
     layoutType: "horizontal",
     description:
-      "Pengembangan dan deployment rangkaian website company profile perusahaan berbasis Laravel, MySQL, dan deployment full setup di server Hostinger.",
+      "Website company profile resmi PT. Satria Enam Putra Perkasa dengan desain antarmuka profesional, sistem profil korporat, dan integrasi katalog layanan.",
     longDescription:
-      "Mengembangkan berbagai situs company profile untuk klien korporat (PT. Satria Enam Putra Perkasa, Sentro Care, Nooren, SAUCA, PT. Soffalux Berkah Jaya, PT. Coway International, Elang Security Nusantara, JGR Garmen, SUTA, Nawa Multi Parts). Proses mencakup UI/UX design, koding Laravel & MySQL, serta penyiapan deployment penuh di Hostinger.",
-    role: "Web Developer (UI/UX, Coding & Deployment)",
-    tags: ["Laravel", "MySQL", "Hostinger", "Tailwind CSS", "UI/UX Design", "SEO"],
+      "Mengembangkan situs web company profile resmi untuk PT. Satria Enam Putra Perkasa. Proyek mencakup perancangan antarmuka UI/UX yang mencerminkan kredibilitas korporat, koding antarmuka Laravel & MySQL database, serta deployment penuh di hosting Hostinger.",
+    role: "Web Developer (UI/UX, Coding & Hostinger Deployment)",
+    tags: ["Laravel", "MySQL", "Tailwind CSS", "Hostinger", "UI/UX Design", "SEO"],
     stats: [
       { label: "Teknologi", value: "Laravel & MySQL" },
-      { label: "Peluncuran", value: "Hostinger Setup" },
+      { label: "Deployment", value: "Hostinger Setup" },
     ],
     keyContributions: [
-      "Merancang UI/UX antarmuka responsif dan ramah SEO sesuai identitas brand masing-masing klien.",
-      "Membangun sistem web company profile menggunakan Laravel & MySQL database.",
-      "Melakukan deployment full setup di server Hostinger (konfigurasi domain, database, dan environment).",
+      "Merancang UI/UX antarmuka korporat yang responsif dan ramah SEO.",
+      "Membangun struktur konten profil perusahaan dan katalog layanan menggunakan Laravel.",
+      "Melakukan penyiapan environment server, domain, dan deployment penuh di Hostinger.",
+    ],
+  },
+  {
+    id: "sentro-care",
+    name: "Sentro Care — Healthcare & Service Website",
+    category: "Company Profile",
+    featured: true,
+    layoutType: "editorial",
+    description:
+      "Pengembangan situs informasi layanan kesehatan Sentro Care dengan tata letak responsif, navigasi intuitif, dan form kontak layanan.",
+    longDescription:
+      "Merancang dan membangun situs company profile Sentro Care untuk menyajikan informasi fasilitas layanan kesehatan secara jernih dan ramah pengguna. Menggunakan framework Laravel dan MySQL dengan deployment di Hostinger.",
+    role: "Web Developer (UI/UX, Coding & Hostinger Deployment)",
+    tags: ["Laravel", "MySQL", "Tailwind CSS", "Hostinger", "UI/UX Design"],
+    stats: [
+      { label: "Teknologi", value: "Laravel & MySQL" },
+      { label: "Deployment", value: "Hostinger Setup" },
+    ],
+    keyContributions: [
+      "Merancang tata letak antarmuka yang bersih, mudah diakses, dan responsif di perangkat seluler.",
+      "Mengimplementasikan sistem pemrosesan formulir kontak dan permintaan layanan.",
+      "Deployment dan konfigurasi penuh di server Hostinger.",
+    ],
+  },
+  {
+    id: "nooren",
+    name: "Nooren — Brand & Corporate Profile Website",
+    category: "Company Profile",
+    featured: true,
+    layoutType: "horizontal",
+    description:
+      "Situs company profile brand Nooren dengan tampilan visual elegan, animasi antarmuka halus, serta optimasi kecepatan muat halaman.",
+    longDescription:
+      "Website resmi brand Nooren yang menyajikan katalog produk dan identitas merek secara profesional. Dikembangkan menggunakan Laravel dan Tailwind CSS dengan setup deployment di Hostinger.",
+    role: "Web Developer (UI/UX, Coding & Hostinger Deployment)",
+    tags: ["Laravel", "MySQL", "Tailwind CSS", "Hostinger", "UI/UX Design"],
+    stats: [
+      { label: "Teknologi", value: "Laravel & MySQL" },
+      { label: "Deployment", value: "Hostinger Setup" },
+    ],
+    keyContributions: [
+      "Mengembangkan visual branding web Nooren dengan elemen UI interaktif.",
+      "Optimasi performa halaman untuk memastikan waktu pemuatan yang sangat cepat.",
+      "Deployment server dan konfigurasi SSL di Hostinger.",
+    ],
+  },
+  {
+    id: "sauca",
+    name: "SAUCA — Corporate Business Portal",
+    category: "Company Profile",
+    featured: false,
+    layoutType: "editorial",
+    description:
+      "Pengembangan portal bisnis dan company profile SAUCA berkinerja tinggi yang dirancang untuk memperkuat kredibilitas identitas perusahaan.",
+    longDescription:
+      "Website korporat SAUCA yang menyajikan portofolio usaha dan profil manajemen perusahaan. Dibangun di atas Laravel dan MySQL dengan deployment Hostinger.",
+    role: "Web Developer (UI/UX, Coding & Hostinger Deployment)",
+    tags: ["Laravel", "MySQL", "Tailwind CSS", "Hostinger", "UI/UX Design"],
+    stats: [
+      { label: "Teknologi", value: "Laravel & MySQL" },
+      { label: "Deployment", value: "Hostinger Setup" },
+    ],
+    keyContributions: [
+      "Membuat struktur arsitektur halaman korporat modern.",
+      "Pengintegrasian database MySQL untuk manajemen informasi bisnis.",
+      "Konfigurasi hosting dan domain di Hostinger.",
+    ],
+  },
+  {
+    id: "soffalux-berkah-jaya",
+    name: "PT. Soffalux Berkah Jaya — Industrial Profile",
+    category: "Company Profile",
+    featured: false,
+    layoutType: "horizontal",
+    description:
+      "Pengembangan situs profil industri & manufaktur PT. Soffalux Berkah Jaya lengkap dengan portofolio produk dan form kontak bisnis.",
+    longDescription:
+      "Situs company profile untuk PT. Soffalux Berkah Jaya guna menampilkan kapabilitas manufaktur dan suplai industri. Dibangun menggunakan Laravel, MySQL, dan di-deploy di Hostinger.",
+    role: "Web Developer (UI/UX, Coding & Hostinger Deployment)",
+    tags: ["Laravel", "MySQL", "Tailwind CSS", "Hostinger", "UI/UX Design"],
+    stats: [
+      { label: "Teknologi", value: "Laravel & MySQL" },
+      { label: "Deployment", value: "Hostinger Setup" },
+    ],
+    keyContributions: [
+      "Merancang galeri produk industri dan spesifikasi teknis.",
+      "Optimasi struktur navigasi untuk kebutuhan B2B.",
+      "Deployment penuh di Hostinger.",
+    ],
+  },
+  {
+    id: "coway-international",
+    name: "PT. Coway International — Product Showcase",
+    category: "Company Profile",
+    featured: false,
+    layoutType: "editorial",
+    description:
+      "Website katalog produk dan company profile PT. Coway International untuk menampilkan lini produk serta jalur edukasi konsumen.",
+    longDescription:
+      "Pengembangan situs profil dan katalog untuk PT. Coway International. Fokus pada penyajian informasi produk yang intuitif bagi calon konsumen.",
+    role: "Web Developer (UI/UX, Coding & Hostinger Deployment)",
+    tags: ["Laravel", "MySQL", "Tailwind CSS", "Hostinger", "UI/UX Design"],
+    stats: [
+      { label: "Teknologi", value: "Laravel & MySQL" },
+      { label: "Deployment", value: "Hostinger Setup" },
+    ],
+    keyContributions: [
+      "Pengembangan halaman katalog produk responsif.",
+      "Integrasi formulir penawaran dan pertanyaan pelanggan.",
+      "Deployment Hostinger.",
+    ],
+  },
+  {
+    id: "elang-security-nusantara",
+    name: "Elang Security Nusantara — Security Services",
+    category: "Company Profile",
+    featured: false,
+    layoutType: "horizontal",
+    description:
+      "Portal penyedia jasa pengamanan profesional Elang Security Nusantara dengan struktur navigasi terorganisir dan kredensial perusahaan.",
+    longDescription:
+      "Website profil penyedia layanan keamanan Elang Security Nusantara. Menyajikan informasi legalitas, jaringan operasional, dan layanan pengamanan.",
+    role: "Web Developer (UI/UX, Coding & Hostinger Deployment)",
+    tags: ["Laravel", "MySQL", "Tailwind CSS", "Hostinger", "UI/UX Design"],
+    stats: [
+      { label: "Teknologi", value: "Laravel & MySQL" },
+      { label: "Deployment", value: "Hostinger Setup" },
+    ],
+    keyContributions: [
+      "Merancang tata letak korporat yang tegas dan profesional.",
+      "Mengembangkan modul layanan dan pengajuan kerja sama.",
+      "Deployment penuh di Hostinger.",
+    ],
+  },
+  {
+    id: "jgr-garmen",
+    name: "JGR Garmen — Apparel & Manufacture Profile",
+    category: "Company Profile",
+    featured: false,
+    layoutType: "editorial",
+    description:
+      "Website company profile dan katalog konveksi JGR Garmen yang menampilkan lini manufaktur pakaian dan galeri hasil produksi.",
+    longDescription:
+      "Situs resmi JGR Garmen untuk mempromosikan kapasitas produksi konveksi dan manufaktur garmen skala besar.",
+    role: "Web Developer (UI/UX, Coding & Hostinger Deployment)",
+    tags: ["Laravel", "MySQL", "Tailwind CSS", "Hostinger", "UI/UX Design"],
+    stats: [
+      { label: "Teknologi", value: "Laravel & MySQL" },
+      { label: "Deployment", value: "Hostinger Setup" },
+    ],
+    keyContributions: [
+      "Membuat galeri foto portofolio hasil jahit dan garmen.",
+      "Form konsultasi pesanan kustom.",
+      "Deployment di Hostinger.",
+    ],
+  },
+  {
+    id: "suta",
+    name: "SUTA — Business Identity Website",
+    category: "Company Profile",
+    featured: false,
+    layoutType: "horizontal",
+    description:
+      "Website profil bisnis SUTA dengan desain antarmuka minimalis modern untuk menampilkan profil usaha dan saluran komunikasi klien.",
+    longDescription:
+      "Website profil usaha SUTA dengan fokus pada penyajian brand identity yang bersih dan modern berbasis Laravel & Hostinger.",
+    role: "Web Developer (UI/UX, Coding & Hostinger Deployment)",
+    tags: ["Laravel", "MySQL", "Tailwind CSS", "Hostinger", "UI/UX Design"],
+    stats: [
+      { label: "Teknologi", value: "Laravel & MySQL" },
+      { label: "Deployment", value: "Hostinger Setup" },
+    ],
+    keyContributions: [
+      "Desain UI/UX minimalis kontemporer.",
+      "Penyiapan infrastruktur web di Hostinger.",
+    ],
+  },
+  {
+    id: "nawa-multi-parts",
+    name: "Nawa Multi Parts — Industrial Parts Profile",
+    category: "Company Profile",
+    featured: false,
+    layoutType: "editorial",
+    description:
+      "Situs web resmi Nawa Multi Parts untuk pengenalan suku cadang industri, spesifikasi produk, dan integrasi penawaran harga.",
+    longDescription:
+      "Website profil perusahaan distributor suku cadang industri Nawa Multi Parts. Dibangun dengan sistem katalog informasi barang dan form inquiry.",
+    role: "Web Developer (UI/UX, Coding & Hostinger Deployment)",
+    tags: ["Laravel", "MySQL", "Tailwind CSS", "Hostinger", "UI/UX Design"],
+    stats: [
+      { label: "Teknologi", value: "Laravel & MySQL" },
+      { label: "Deployment", value: "Hostinger Setup" },
+    ],
+    keyContributions: [
+      "Penyusunan katalog spesifikasi barang industri.",
+      "Form permintaan penawaran harga.",
+      "Deployment server Hostinger.",
     ],
   },
   {
