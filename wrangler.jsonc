@@ -1,5 +1,5 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
+  "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "portofolio-website",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-09-11",
@@ -9,6 +9,9 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
+  },
+  "build": {
+    "command": "npx opennextjs-cloudflare build"
   },
   "observability": {
     "enabled": true

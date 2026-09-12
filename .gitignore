@@ -43,3 +43,9 @@ next-env.d.ts
 # documentation & local assets
 docs/
 
+# wrangler & open-next build artifacts
+.open-next
+.wrangler
+.dev.vars
+
+
