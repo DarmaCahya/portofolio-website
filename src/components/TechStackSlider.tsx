@@ -47,12 +47,12 @@ export default function TechStackSlider() {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 mb-4 flex items-center justify-between">
         <div className="flex items-center gap-2 text-[11px] font-mono tracking-wider uppercase text-[#64748b]">
           <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
-          <span>Tech Stack & Toolkit</span>
+          <span>Teknologi &amp; Toolkit</span>
           <span className="text-[#334155]">•</span>
-          <span className="text-[#38bdf8]">25 Worked Technologies</span>
+          <span className="text-[#38bdf8]">25+ Teknologi Berpengalaman</span>
         </div>
         <div className="text-[10px] font-mono text-[#64748b] hidden sm:block">
-          [ Hover to pause slider ]
+          [ Arahkan kursor untuk pause slider ]
         </div>
       </div>
 

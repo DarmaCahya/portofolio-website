@@ -135,10 +135,10 @@ export default function AudioPlayer() {
           {/* Track Info */}
           <div className="flex flex-col pr-1 cursor-pointer" onClick={togglePlay}>
             <span className="text-[11px] font-mono font-semibold text-[#f3f4f6] leading-tight">
-              {isPlaying ? "Memutar Backsound" : "Backsound Musik"}
+              {isPlaying ? "Memutar Musik Latar" : "Musik Latar"}
             </span>
             <span className="text-[9px] font-mono text-[#6b7280] leading-tight">
-              {playerReady ? (isPlaying ? "YouTube Stream Active" : "Klik untuk pemutar") : "Memuat Player..."}
+              {playerReady ? (isPlaying ? "Stream YouTube Aktif" : "Klik untuk memutar") : "Memuat Pemutar..."}
             </span>
           </div>
 

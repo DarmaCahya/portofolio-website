@@ -81,7 +81,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
         <div className="space-y-3">
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#cbd5e1]">
             <Layers className="w-3.5 h-3.5 text-[#38bdf8]" />
-            <span>Key Contributions &amp; Architectural Work</span>
+            <span>Kontribusi Utama &amp; Hasil Pengembangan</span>
           </div>
           <ul className="space-y-2.5">
             {project.keyContributions.map((contrib, idx) => (
@@ -95,7 +95,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
 
         {/* Technologies Used */}
         <div className="space-y-2 pt-2">
-          <div className="text-xs font-mono uppercase text-[#64748b]">Stack &amp; Frameworks</div>
+          <div className="text-xs font-mono uppercase text-[#64748b]">Teknologi &amp; Framework</div>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <span
@@ -117,7 +117,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono uppercase tracking-wider rounded bg-[#f1f5f9] text-[#0c0e12] hover:bg-white transition-colors"
             >
-              <span>Visit Live Website</span>
+              <span>Kunjungi Website Live</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           )}
@@ -129,7 +129,7 @@ export default function ProjectDetailModal({ project, onClose }: ProjectDetailMo
               className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono uppercase tracking-wider rounded bg-[#161c28] text-[#cbd5e1] border border-[#273349] hover:bg-[#202737] hover:text-white transition-colors"
             >
               <GithubIcon className="w-3.5 h-3.5" />
-              <span>Source Code</span>
+              <span>Kode Sumber (Repository)</span>
             </a>
           )}
         </div>

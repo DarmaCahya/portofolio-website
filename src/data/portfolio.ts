@@ -153,8 +153,8 @@ export const CERTIFICATIONS_DATA: CertificationItem[] = [
 
 export const TECH_CATEGORIES: TechCategory[] = [
   {
-    title: "Frontend & Core",
-    description: "Stack utama untuk membangun antarmuka pengguna web modern & responsif",
+    title: "Frontend & Utama",
+    description: "Rangkaian teknologi utama untuk membangun antarmuka pengguna web modern & responsif",
     skills: [
       { name: "React", note: "Siklus hidup komponen, state management, custom hooks" },
       { name: "Next.js", note: "App Router, SSR/SSG, route handlers, performa" },
@@ -164,16 +164,16 @@ export const TECH_CATEGORIES: TechCategory[] = [
     ],
   },
   {
-    title: "Styling & Frameworks",
+    title: "Styling & Framework",
     description: "Peralatan ekosistem desain antarmuka responsif",
     skills: [
-      { name: "Tailwind CSS", note: "Utility-first layout, custom design tokens, breakpoints" },
+      { name: "Tailwind CSS", note: "Layout utility-first, custom design tokens, breakpoints" },
       { name: "Bootstrap", note: "Prototyping cepat & refaktorisasi sistem" },
       { name: "Responsive UI", note: "Pendekatan mobile-first & kompatibilitas peramban" },
     ],
   },
   {
-    title: "Backend & Database",
+    title: "Backend & Basis Data",
     description: "Pengembangan backend, arsitektur basis data, & API",
     skills: [
       { name: "Laravel", note: "Arsitektur MVC, Blade, migrasi basis data" },
@@ -185,7 +185,7 @@ export const TECH_CATEGORIES: TechCategory[] = [
     ],
   },
   {
-    title: "Tools & DevOps",
+    title: "Tools & Peralatan",
     description: "Peralatan harian, otomasi, deployment, & pengujian",
     skills: [
       { name: "Hostinger", note: "Setup server, deployment Laravel, domain & database" },
@@ -201,7 +201,7 @@ export const PROJECTS: Project[] = [
   {
     id: "journal-medika-one",
     name: "Journal Medika One",
-    category: "Health Technology",
+    category: "Teknologi Kesehatan",
     featured: true,
     layoutType: "editorial",
     description:
@@ -211,8 +211,8 @@ export const PROJECTS: Project[] = [
     role: "Frontend Developer",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "TanStack Query", "REST API"],
     stats: [
-      { label: "Live Site", value: "journal.medikaone.com" },
-      { label: "Role", value: "Frontend Developer" },
+      { label: "Situs Live", value: "journal.medikaone.com" },
+      { label: "Peran", value: "Frontend Developer" },
     ],
     keyContributions: [
       "Membangun antarmuka portal jurnal ilmiah medis yang responsif dan terstruktur menggunakan Next.js & Tailwind CSS.",
@@ -224,7 +224,7 @@ export const PROJECTS: Project[] = [
   {
     id: "prims-sultra",
     name: "PRIMS SULTRA — Next.js Fullstack Client Template Platform",
-    category: "Fullstack Web & CMS Template",
+    category: "Template Fullstack & CMS",
     featured: true,
     layoutType: "large",
     description:
@@ -234,8 +234,8 @@ export const PROJECTS: Project[] = [
     role: "Fullstack Developer & UI/UX",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Fullstack", "CMS Admin Dashboard"],
     stats: [
-      { label: "Role", value: "Fullstack Dev & UI/UX" },
-      { label: "Scope", value: "Public Portal + CMS Admin" },
+      { label: "Peran", value: "Fullstack Dev & UI/UX" },
+      { label: "Cakupan", value: "Portal Publik + Admin CMS" },
     ],
     keyContributions: [
       "Merancang UI/UX antarmuka portal publik responsif & dashboard Administrator CMS modern.",
@@ -257,8 +257,8 @@ export const PROJECTS: Project[] = [
     role: "Web Developer (UI/UX, Coding & Deployment)",
     tags: ["Laravel", "MySQL", "Hostinger", "Tailwind CSS", "UI/UX Design", "SEO"],
     stats: [
-      { label: "Stack", value: "Laravel & MySQL" },
-      { label: "Deploy", value: "Hostinger Setup" },
+      { label: "Teknologi", value: "Laravel & MySQL" },
+      { label: "Peluncuran", value: "Hostinger Setup" },
     ],
     keyContributions: [
       "Merancang UI/UX antarmuka responsif dan ramah SEO sesuai identitas brand masing-masing klien.",
@@ -269,7 +269,7 @@ export const PROJECTS: Project[] = [
   {
     id: "bni-ventures-duluin",
     name: "BNI Ventures & Corporate Portals",
-    category: "Fintech & Corporate Platforms",
+    category: "Platform Fintek & Korporat",
     featured: true,
     layoutType: "editorial",
     description:
@@ -279,8 +279,8 @@ export const PROJECTS: Project[] = [
     role: "Website Developer",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "REST API"],
     stats: [
-      { label: "Role", value: "Website Developer" },
-      { label: "Impact", value: "15+ Platforms" },
+      { label: "Peran", value: "Website Developer" },
+      { label: "Dampak", value: "15+ Platform" },
     ],
     keyContributions: [
       "Mengintegrasikan antarmuka frontend dengan API backend untuk BNI Ventures.",
@@ -293,7 +293,7 @@ export const PROJECTS: Project[] = [
   {
     id: "qr-hunt",
     name: "QR Hunt",
-    category: "Event Attendance Platform",
+    category: "Platform Presensi Event",
     featured: true,
     layoutType: "horizontal",
     description:
@@ -303,8 +303,8 @@ export const PROJECTS: Project[] = [
     role: "Frontend Developer (Freelance)",
     tags: ["Next.js", "React", "REST API", "Tailwind CSS"],
     stats: [
-      { label: "Live Site", value: "qrhunt.communal.id" },
-      { label: "Performance", value: "Instant Scan" },
+      { label: "Situs Live", value: "qrhunt.communal.id" },
+      { label: "Performa", value: "Pemindaian Instan" },
     ],
     keyContributions: [
       "Membangun scanner QR instan berbasis browser yang teroptimasi untuk perangkat seluler.",
@@ -316,7 +316,7 @@ export const PROJECTS: Project[] = [
   {
     id: "medika-one",
     name: "MedikaOne",
-    category: "Health Technology",
+    category: "Teknologi Kesehatan",
     featured: true,
     layoutType: "editorial",
     description:
@@ -326,8 +326,8 @@ export const PROJECTS: Project[] = [
     role: "Frontend Developer (Freelance)",
     tags: ["React", "Responsive UI", "Tailwind CSS", "SEO"],
     stats: [
-      { label: "Live Site", value: "medikaone.com" },
-      { label: "Focus", value: "HealthTech UI" },
+      { label: "Situs Live", value: "medikaone.com" },
+      { label: "Fokus", value: "Antarmuka Kesehatan" },
     ],
     keyContributions: [
       "Mengimplementasikan tata letak responsif dan aset media yang cepat dimuat.",
@@ -339,7 +339,7 @@ export const PROJECTS: Project[] = [
   {
     id: "freshbite-bangkit",
     name: "FreshBite — Fruit Quality Detector",
-    category: "Bangkit Capstone Project",
+    category: "Proyek Capstone Bangkit",
     featured: false,
     layoutType: "compact",
     description:
@@ -349,7 +349,7 @@ export const PROJECTS: Project[] = [
     role: "Cloud Computing / Backend Dev",
     tags: ["Express.js", "GCP", "REST API", "Node.js"],
     stats: [
-      { label: "Cohort", value: "Bangkit 2024" },
+      { label: "Program", value: "Bangkit 2024" },
     ],
     keyContributions: [
       "Membangun Express.js API untuk penanganan validasi payload gambar dan inferensi AI.",
@@ -360,7 +360,7 @@ export const PROJECTS: Project[] = [
   {
     id: "brewfest-coffee",
     name: "BrewFest — Coffee Competition Platform",
-    category: "Academic / Internal Platform",
+    category: "Platform Akademis & Internal",
     featured: false,
     layoutType: "compact",
     description:
@@ -378,7 +378,7 @@ export const PROJECTS: Project[] = [
   {
     id: "apify-n8n-automation",
     name: "Social Media Competitor AI Scraper",
-    category: "Automation & AI Workflow",
+    category: "Otomasi & AI Workflow",
     featured: false,
     layoutType: "compact",
     description:

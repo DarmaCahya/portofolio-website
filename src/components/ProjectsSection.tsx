@@ -18,13 +18,13 @@ export default function ProjectsSection({ isHomePage = true }: ProjectsSectionPr
   const categories = [
     "All",
     "Company Profile",
-    "Fullstack Web & CMS Template",
-    "Fintech & Corporate Platforms",
-    "Event Attendance Platform",
-    "Health Technology",
-    "Bangkit Capstone Project",
-    "Academic / Internal Platform",
-    "Automation & AI Workflow",
+    "Template Fullstack & CMS",
+    "Platform Fintek & Korporat",
+    "Platform Presensi Event",
+    "Teknologi Kesehatan",
+    "Proyek Capstone Bangkit",
+    "Platform Akademis & Internal",
+    "Otomasi & AI Workflow",
   ];
 
   const filteredProjects = PROJECTS.filter((project) => {
