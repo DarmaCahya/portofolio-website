@@ -23,14 +23,21 @@ export interface TechCategory {
   }[];
 }
 
-export interface ExperienceItem {
-  role: string;
-  company: string;
+export interface ExperienceRole {
+  roleTitle: string;
   period: string;
-  location: string;
-  description: string;
+  type: string;
+  description?: string;
   bullets: string[];
   techStack: string[];
+}
+
+export interface ExperienceItem {
+  company: string;
+  totalPeriod: string;
+  location: string;
+  overallDescription: string;
+  roles: ExperienceRole[];
 }
 
 export interface EducationItem {
@@ -174,22 +181,25 @@ export const TECH_CATEGORIES: TechCategory[] = [
   },
   {
     title: "Backend & Database",
-    description: "API design and server integration experience",
+    description: "API design, backend languages, and server architecture",
     skills: [
       { name: "Laravel", note: "MVC architecture, Blade templates, database migrations" },
       { name: "Express.js", note: "RESTful API creation, middleware, route handling" },
-      { name: "MySQL & MongoDB", note: "Relational schemas, query optimization, data modeling" },
-      { name: "REST API", note: "Endpoint integration, postman testing, error handling" },
+      { name: "Python & FastAPI", note: "Async API development, data validation, clean architecture" },
+      { name: "Go (Golang)", note: "Concurrent routines, lightweight backend services" },
+      { name: "MySQL & PostgreSQL", note: "Relational schemas, query optimization, data modeling" },
+      { name: "MongoDB", note: "Document store, flexible JSON schema indexing" },
     ],
   },
   {
-    title: "Tools & Environment",
-    description: "Daily developer tools and testing environments",
+    title: "Tools & DevOps",
+    description: "Daily developer tools, containers, testing, and automation",
     skills: [
       { name: "Git & GitHub", note: "Version control, feature branching, PR reviews" },
-      { name: "VS Code", note: "Primary IDE configured with linting & code formatting" },
-      { name: "Postman", note: "API contract testing and response verification" },
-      { name: "Selenium", note: "Automated end-to-end testing for authentication and flows" },
+      { name: "Docker", note: "Containerization, environment isolation, Docker Compose" },
+      { name: "Postman & Bruno", note: "API contract testing, environment variables, collection suites" },
+      { name: "Selenium & Katalon", note: "Automated end-to-end testing, UI test scripts" },
+      { name: "n8n", note: "Workflow automation, webhooks, third-party integrations" },
     ],
   },
 ];
@@ -326,61 +336,97 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCE_ITEMS: ExperienceItem[] = [
   {
-    role: "Website Developer (PKWT & Intern)",
     company: "Duluin Group — Bandung",
-    period: "Okt 2025 — Present",
+    totalPeriod: "Okt 2024 — 8 Okt 2026",
     location: "Bandung, Indonesia",
-    description:
-      "Core developer building client web applications, internal dashboards, and corporate portals. Worked on frontend interfaces and API integrations for clients like BNI Ventures and internal products.",
-    bullets: [
-      "Developed & integrated frontend interfaces with backend APIs for BNI Ventures.",
-      "Designed and developed Satu Creative platform (landing page + internal operational dashboard).",
-      "Built Whistleblowing System (WBS) with secure case management and confidential reporting workflows.",
-      "Developed SKI One Service platform (public landing page + admin dashboard) and revamped Duluin Career Page.",
-      "Delivered performance-optimized, SEO-friendly websites for 10+ clients including PT. SEPP, Baksya, Elang Security, JGR Garmen, PT. Soffalux, PT. Coway International, SUTA, and Nawa Multi Parts.",
+    overallDescription:
+      "Pengembang web utama yang membangun aplikasi web klien, dashboard operasional internal, dan portal korporat. Mengalami peningkatan posisi dari Frontend Intern hingga Website Developer (PKWT).",
+    roles: [
+      {
+        roleTitle: "Website Developer (PKWT)",
+        period: "Feb 2025 — 8 Okt 2026",
+        type: "Full-time Contract (PKWT)",
+        description: "Bertanggung jawab atas pengintegrasian frontend dan pengembangan sistem web korporat klien besar seperti BNI Ventures dan platform internal.",
+        bullets: [
+          "Pengintegrasian antarmuka frontend dengan API backend untuk portal BNI Ventures.",
+          "Merancang dan membangun platform Satu Creative (landing page + dashboard operasional internal).",
+          "Mengembangkan Whistleblowing System (WBS) dengan fitur manajemen kasus dan pelaporan terenkripsi.",
+          "Membangun portal publik & dashboard manajemen SKI One Service serta merombak Halaman Karir Duluin.",
+          "Mengirimkan website performa tinggi & SEO friendly untuk 10+ klien termasuk PT. SEPP, Baksya, Elang Security, JGR Garmen, PT. Soffalux, PT. Coway International, SUTA, dan Nawa Multi Parts.",
+        ],
+        techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Laravel", "REST API"],
+      },
+      {
+        roleTitle: "Frontend Website Developer Intern",
+        period: "Okt 2024 — Jan 2025",
+        type: "Internship",
+        description: "Mengembangkan antarmuka landing page responsif dan membantu pengintegrasian API awal untuk berbagai proyek agensi.",
+        bullets: [
+          "Mengembangkan antarmuka landing page responsif untuk berbagai klien agensi.",
+          "Membangun komponen UI modular dan template tata letak yang digunakan di seluruh tim dev.",
+        ],
+        techStack: ["React", "Next.js", "Tailwind CSS", "JavaScript", "HTML/CSS"],
+      },
     ],
-    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Laravel", "REST API"],
   },
   {
-    role: "Remote Fullstack Developer & Frontend Intern",
     company: "PukulEnam — Bandung",
-    period: "Sep 2024 — Jun 2025",
+    totalPeriod: "Sep 2024 — Jun 2025",
     location: "Bandung / Remote",
-    description:
-      "Contributed to client and internal web projects, including SatriaBIPA UI, news crawler integrations, Bali tour booking platform, and dog adoption site.",
-    bullets: [
-      "Developed frontend interface for SatriaBIPA project using HTML, CSS, and Tailwind CSS.",
-      "Built news crawler system integrated with database and developed React dashboard for Talas project.",
-      "Created static web platform for booking tours in Bali using React.js.",
-      "Developed web application for dog adoption using Laravel.",
+    overallDescription:
+      "Pengembangan web fullstack remote dan frontend intern untuk proyek klien dan platform internal.",
+    roles: [
+      {
+        roleTitle: "Remote Fullstack Developer & Frontend Intern",
+        period: "Sep 2024 — Jun 2025",
+        type: "Contract / Remote Internship",
+        bullets: [
+          "Mengembangkan antarmuka frontend proyek SatriaBIPA menggunakan HTML, CSS, dan Tailwind CSS.",
+          "Membangun sistem news crawler terintegrasi database dan dashboard React untuk proyek Talas.",
+          "Membuat platform web statis untuk pemesanan tur Bali menggunakan React.js.",
+          "Mengembangkan aplikasi web adopsi anjing menggunakan Laravel.",
+        ],
+        techStack: ["React.js", "Tailwind CSS", "Laravel", "JavaScript", "HTML/CSS"],
+      },
     ],
-    techStack: ["React.js", "Tailwind CSS", "Laravel", "JavaScript", "HTML/CSS"],
   },
   {
-    role: "Backend Developer Mentee (Digistar)",
     company: "Telkom Indonesia",
-    period: "Agu 2024 — Okt 2024",
+    totalPeriod: "Agu 2024 — Okt 2024",
     location: "Bandung, Indonesia",
-    description:
-      "Participated in Digistar Program by Telkom Indonesia. Developed RESTful APIs using Express.js and MongoDB for PADI UMKM product catalog.",
-    bullets: [
-      "Built and documented RESTful APIs for PADI UMKM product catalog using Express.js and MongoDB.",
-      "Tested API endpoints with Postman to ensure reliable request/response data integrity.",
+    overallDescription:
+      "Mentee Backend Developer pada Digistar Program oleh PT Telkom Indonesia.",
+    roles: [
+      {
+        roleTitle: "Backend Developer Mentee (Digistar Program)",
+        period: "Agu 2024 — Okt 2024",
+        type: "Mentorship Program",
+        bullets: [
+          "Membangun dan mendokumentasikan RESTful API untuk katalog produk PADI UMKM menggunakan Express.js & MongoDB.",
+          "Melakukan pengujian endpoint API dengan Postman untuk memastikan integritas data request/response.",
+        ],
+        techStack: ["Express.js", "MongoDB", "Postman", "Node.js"],
+      },
     ],
-    techStack: ["Express.js", "MongoDB", "Postman", "Node.js"],
   },
   {
-    role: "Cloud Computing Cohort",
     company: "Bangkit Academy by Google, GoTo, Traveloka",
-    period: "Feb 2024 — Jun 2024",
+    totalPeriod: "Feb 2024 — Jun 2024",
     location: "Bandung, Indonesia",
-    description:
-      "Intensive cloud computing specialization. Built the backend architecture for FreshBite fruit freshness detection app deployed on Google Cloud Platform.",
-    bullets: [
-      "Developed backend REST API using Express.js and connected to Google Cloud Platform resources.",
-      "Completed hands-on cloud architecture and backend development curriculum.",
+    overallDescription:
+      "Spesialisasi komputasi awan (Cloud Computing Cohort) Bangkit Academy.",
+    roles: [
+      {
+        roleTitle: "Cloud Computing Cohort",
+        period: "Feb 2024 — Jun 2024",
+        type: "Academy Program",
+        bullets: [
+          "Mengembangkan REST API backend menggunakan Express.js yang terhubung dengan resource Google Cloud Platform.",
+          "Menyelesaikan kurikulum arsitektur cloud praktis dan pengembangan backend.",
+        ],
+        techStack: ["Google Cloud Platform", "Express.js", "Node.js", "REST API"],
+      },
     ],
-    techStack: ["Google Cloud Platform", "Express.js", "Node.js", "REST API"],
   },
 ];
 
