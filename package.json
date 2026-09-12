@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cf": "opennextjs-cloudflare build",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "next build && wrangler pages deploy out",
     "start": "next start",
     "lint": "eslint"
   },
