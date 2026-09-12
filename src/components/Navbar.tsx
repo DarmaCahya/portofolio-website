@@ -68,14 +68,6 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Quick Action */}
-          <a
-            href={`mailto:${PERSONAL_INFO.email}`}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-[#cbd5e1] bg-[#171d29] hover:bg-[#202738] border border-[#273247] rounded-md transition-colors"
-          >
-            <span>Kontak</span>
-            <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
-          </a>
         </div>
 
         {/* Mobile Menu Toggle */}

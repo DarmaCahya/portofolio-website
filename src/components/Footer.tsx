@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUp, Coffee } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { PERSONAL_INFO } from "@/data/portfolio";
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-8 bg-[#090b0e] text-[#64748b] text-xs font-mono">
+    <footer className="py-8 bg-[#090b0e] text-[#64748b] text-xs font-mono border-t border-[#1c2331]/50">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-3">
         
         {/* Left Copyright */}
@@ -19,17 +19,11 @@ export default function Footer() {
           <span>All rights reserved.</span>
         </div>
 
-        {/* Center / Subtle Developer Note */}
-        <div className="flex items-center gap-1.5 text-[#94a3b8]">
-          <span>Built with Next.js &middot; TypeScript &middot; caffeine</span>
-          <Coffee className="w-3.5 h-3.5 text-[#f59e0b] opacity-80" />
-        </div>
-
         {/* Right Back to Top */}
         <button
           type="button"
           onClick={scrollToTop}
-          className="inline-flex items-center gap-1 text-[#94a3b8] hover:text-[#f1f5f9] transition-colors p-1"
+          className="inline-flex items-center gap-1.5 text-[#94a3b8] hover:text-[#f1f5f9] transition-colors p-1"
           aria-label="Scroll to top"
         >
           <span>Ke atas</span>

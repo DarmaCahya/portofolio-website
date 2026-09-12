@@ -66,7 +66,7 @@ export const PERSONAL_INFO = {
   name: "Darma Cahya",
   fullName: "I Made Darma Cahya Adyatma",
   displayName: "Darma Cahya",
-  title: "Frontend-focused Website Developer",
+  title: "Web Developer - Frontend Developer",
   education: "S1 Informatika — Telkom University, Bandung (2021–2025)",
   location: "Bandung, Indonesia",
   timezone: "WIB (UTC+7)",

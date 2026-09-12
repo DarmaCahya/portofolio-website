@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRight, Mail, MapPin, GraduationCap, Code2 } from "lucide-react";
+import { ArrowRight, Mail, MapPin, GraduationCap } from "lucide-react";
 import { PERSONAL_INFO } from "@/data/portfolio";
 
 export default function HeroSection() {
@@ -28,15 +28,11 @@ export default function HeroSection() {
 
             {/* Name & Identity */}
             <div className="space-y-1.5">
-              <div className="text-xs font-mono uppercase tracking-wider text-[#38bdf8] flex items-center gap-1.5">
-                <Code2 className="w-3.5 h-3.5" />
-                <span>Personal Portfolio</span>
-              </div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#f8fafc]">
                 {PERSONAL_INFO.fullName}
               </h1>
-              <p className="text-base sm:text-lg font-medium text-[#cbd5e1]">
-                {PERSONAL_INFO.title}
+              <p className="text-base sm:text-lg font-semibold text-[#38bdf8]">
+                Web Developer - Frontend Developer
               </p>
             </div>
 
@@ -72,34 +68,28 @@ export default function HeroSection() {
 
           </div>
 
-          {/* Right Column: Profile Image Card (5 Cols on md+) */}
+          {/* Right Column: Full Profile Photo Card with Pattern Backdrop (5 Cols on md+) */}
           <div className="md:col-span-5 flex justify-center md:justify-end">
-            <div className="relative w-full max-w-xs sm:max-w-sm">
+            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md p-2">
               
-              {/* Outer Decorative Frame */}
-              <div className="relative rounded-xl bg-[#11151e] border border-[#232c3f] p-3 shadow-xl space-y-3">
-                
-                {/* Photo Box */}
-                <div className="relative aspect-[4/5] w-full rounded-lg overflow-hidden bg-[#181f2c] border border-[#20293a]">
+              {/* Pattern Backdrop Behind Image */}
+              <div className="absolute -inset-2.5 sm:-inset-3.5 rounded-2xl bg-[#141b27] border border-[#253248] overflow-hidden opacity-95 -z-10 shadow-2xl">
+                <div className="absolute inset-0 bg-[url('/backgrounds/abstract_pattern_design_background_2007.jpg')] bg-repeat bg-[length:350px] opacity-20 mix-blend-overlay" />
+                <div className="absolute -bottom-8 -right-8 w-36 h-36 bg-[#38bdf8]/15 rounded-full blur-2xl" />
+              </div>
+
+              {/* Full Image Container */}
+              <div className="relative rounded-xl overflow-hidden bg-[#11151e] border border-[#28354c] shadow-2xl group">
+                <div className="relative aspect-[4/5] w-full">
                   <Image
                     src={PERSONAL_INFO.photoPath}
                     alt={PERSONAL_INFO.fullName}
                     fill
-                    sizes="(max-width: 768px) 100vw, 400px"
-                    className="object-cover object-center hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 450px"
+                    className="object-cover object-center group-hover:scale-102 transition-transform duration-500"
                     priority
                   />
                 </div>
-
-                {/* Developer Badge Footer */}
-                <div className="p-2 rounded-lg bg-[#0e1118] border border-[#1b2230] flex items-center justify-between text-xs font-mono">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#38bdf8]" />
-                    <span className="text-[#cbd5e1]">{PERSONAL_INFO.displayName}</span>
-                  </div>
-                  <span className="text-[#64748b]">Bandung, ID</span>
-                </div>
-
               </div>
 
             </div>
