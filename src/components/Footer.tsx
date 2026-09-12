@@ -1,35 +1,37 @@
-"use client";
-
-import { ArrowUp } from "lucide-react";
+import Link from "next/link";
 import { PERSONAL_INFO } from "@/data/portfolio";
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <footer className="py-8 bg-[#090b0e] text-[#64748b] text-xs font-mono border-t border-[#1c2331]/50">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-3">
-        
-        {/* Left Copyright */}
-        <div className="flex items-center gap-2">
-          <span>&copy; {new Date().getFullYear()} {PERSONAL_INFO.displayName}.</span>
-          <span className="text-[#334155]">•</span>
-          <span>All rights reserved.</span>
+    <footer className="py-10 bg-[#090a0d] border-t border-[#1c202c] text-xs font-mono text-[#6b7280]">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          © {new Date().getFullYear()} {PERSONAL_INFO.fullName}. Hak Cipta Dilindungi.
         </div>
-
-        {/* Right Back to Top */}
-        <button
-          type="button"
-          onClick={scrollToTop}
-          className="inline-flex items-center gap-1.5 text-[#94a3b8] hover:text-[#f1f5f9] transition-colors p-1"
-          aria-label="Scroll to top"
-        >
-          <span>Ke atas</span>
-          <ArrowUp className="w-3.5 h-3.5" />
-        </button>
-
+        <div className="flex items-center gap-6">
+          <a
+            href={PERSONAL_INFO.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#e5e7eb] transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href={PERSONAL_INFO.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#e5e7eb] transition-colors"
+          >
+            LinkedIn
+          </a>
+          <a
+            href={`mailto:${PERSONAL_INFO.email}`}
+            className="hover:text-[#e5e7eb] transition-colors"
+          >
+            Email
+          </a>
+        </div>
       </div>
     </footer>
   );

@@ -12,6 +12,7 @@ export interface Project {
   featured?: boolean;
   layoutType: 'large' | 'horizontal' | 'editorial' | 'compact';
   stats?: { label: string; value: string }[];
+  imagePath?: string;
 }
 
 export interface TechCategory {
@@ -62,29 +63,21 @@ export interface CertificationItem {
   category: 'program' | 'dicoding';
 }
 
-export interface PhilosophyItem {
-  number: string;
-  title: string;
-  tagline: string;
-  description: string;
-}
-
 export const PERSONAL_INFO = {
   name: "Darma Cahya",
   fullName: "I Made Darma Cahya Adyatma",
   displayName: "Darma Cahya",
-  title: "Web Developer - Frontend Developer",
-  education: "S1 Informatika — Telkom University, Bandung (2021–2025)",
+  title: "Frontend Developer & Web Developer",
+  education: "S1 Informatika — Telkom University (2021–2025)",
   location: "Bandung, Indonesia",
   timezone: "WIB (UTC+7)",
-  availability: "Available for opportunities",
   email: "imdarmacahya@gmail.com",
   phone: "+62 896-9732-5196",
   github: "https://github.com/DarmaCahya",
   linkedin: "https://linkedin.com/in/darmacahya",
-  headline: "Informatics graduate specializing in Frontend Development & Responsive Web Interfaces.",
+  headline: "Lulusan S1 Informatika berfokus pada Frontend Development & Antarmuka Web Responsif.",
   subheadline:
-    "Web developer with hands-on experience building fast, maintainable web applications, connecting complex backend APIs, and crafting intuitive user interfaces.",
+    "Pengembang web dengan pengalaman langsung membangun aplikasi web cepat, mengintegrasikan API kompleks, dan mengutamakan kualitas antarmuka serta struktur kode yang rapi.",
   photoPath: "/darma-profile.jpeg",
 };
 
@@ -161,71 +154,138 @@ export const CERTIFICATIONS_DATA: CertificationItem[] = [
 export const TECH_CATEGORIES: TechCategory[] = [
   {
     title: "Frontend & Core",
-    description: "Primary stack for building modern, responsive user interfaces",
+    description: "Stack utama untuk membangun antarmuka pengguna web modern & responsif",
     skills: [
-      { name: "React", note: "Component lifecycle, state management, custom hooks" },
-      { name: "Next.js", note: "App Router, SSR/SSG, route handlers, performance" },
-      { name: "TypeScript", note: "Strict typing, interface definitions, type safety" },
-      { name: "JavaScript", note: "ESNext+, asynchronous patterns, DOM manipulation" },
-      { name: "HTML & CSS", note: "Semantic layout structure, flexbox, grid, accessibility" },
+      { name: "React", note: "Siklus hidup komponen, state management, custom hooks" },
+      { name: "Next.js", note: "App Router, SSR/SSG, route handlers, performa" },
+      { name: "TypeScript", note: "Pengontrolan tipe ketat, definisi interface" },
+      { name: "JavaScript", note: "ESNext+, async/await, manipulasi DOM" },
+      { name: "HTML & CSS", note: "Struktur semantik, flexbox, grid, aksesibilitas" },
     ],
   },
   {
     title: "Styling & Frameworks",
-    description: "Utility tools for precise, modern design implementation",
+    description: "Peralatan ekosistem desain antarmuka responsif",
     skills: [
-      { name: "Tailwind CSS", note: "Utility-first layout, custom design tokens, responsive breakpoints" },
-      { name: "Bootstrap", note: "Rapid prototyping, legacy system refactoring" },
-      { name: "Responsive UI", note: "Mobile-first approach, cross-browser compatibility" },
+      { name: "Tailwind CSS", note: "Utility-first layout, custom design tokens, breakpoints" },
+      { name: "Bootstrap", note: "Prototyping cepat & refaktorisasi sistem" },
+      { name: "Responsive UI", note: "Pendekatan mobile-first & kompatibilitas peramban" },
     ],
   },
   {
     title: "Backend & Database",
-    description: "API design, backend languages, and server architecture",
+    description: "Pengembangan backend, arsitektur basis data, & API",
     skills: [
-      { name: "Laravel", note: "MVC architecture, Blade templates, database migrations" },
-      { name: "Express.js", note: "RESTful API creation, middleware, route handling" },
-      { name: "Python & FastAPI", note: "Async API development, data validation, clean architecture" },
-      { name: "Go (Golang)", note: "Concurrent routines, lightweight backend services" },
-      { name: "MySQL & PostgreSQL", note: "Relational schemas, query optimization, data modeling" },
-      { name: "MongoDB", note: "Document store, flexible JSON schema indexing" },
+      { name: "Laravel", note: "Arsitektur MVC, Blade, migrasi basis data" },
+      { name: "Express.js", note: "Pembuatan RESTful API, middleware, routing" },
+      { name: "Python & FastAPI", note: "Pengembangan API asinkron" },
+      { name: "Go (Golang)", note: "Layanan backend ringan berkinerja tinggi" },
+      { name: "MySQL & PostgreSQL", note: "Skema relasional, optimasi query" },
+      { name: "MongoDB", note: "Penyimpanan dokumen NoSQL" },
     ],
   },
   {
     title: "Tools & DevOps",
-    description: "Daily developer tools, containers, testing, and automation",
+    description: "Peralatan harian, otomasi, deployment, & pengujian",
     skills: [
-      { name: "Git & GitHub", note: "Version control, feature branching, PR reviews" },
-      { name: "Docker", note: "Containerization, environment isolation, Docker Compose" },
-      { name: "Postman & Bruno", note: "API contract testing, environment variables, collection suites" },
-      { name: "Selenium & Katalon", note: "Automated end-to-end testing, UI test scripts" },
-      { name: "n8n", note: "Workflow automation, webhooks, third-party integrations" },
+      { name: "Hostinger", note: "Setup server, deployment Laravel, domain & database" },
+      { name: "Git & GitHub", note: "Kontrol versi, branching, PR code review" },
+      { name: "Docker", note: "Kontainerisasi & isolasi lingkungan dev" },
+      { name: "Postman & Bruno", note: "Pengujian kontrak API" },
+      { name: "n8n", note: "Otomasi workflow & webhook integrasi" },
     ],
   },
 ];
 
 export const PROJECTS: Project[] = [
   {
+    id: "journal-medika-one",
+    name: "Journal Medika One",
+    category: "Health Technology",
+    featured: true,
+    layoutType: "editorial",
+    description:
+      "Portal jurnal dan publikasi ilmiah kesehatan MedikaOne yang terintegrasi dengan REST API menggunakan Next.js, Tailwind CSS, dan TanStack Query.",
+    longDescription:
+      "Journal Medika One merupakan platform jurnal ilmiah medis (journal.medikaone.com) untuk publikasi artikel dan riset kesehatan. Saya bertindak sebagai Frontend Developer yang membangun antarmuka web menggunakan Next.js, Tailwind CSS, serta mengintegrasikan REST API backend menggunakan TanStack Query (React Query) untuk penanganan fetching data, caching, dan sinkronisasi status secara efisien.",
+    role: "Frontend Developer",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "TanStack Query", "REST API"],
+    stats: [
+      { label: "Live Site", value: "journal.medikaone.com" },
+      { label: "Role", value: "Frontend Developer" },
+    ],
+    keyContributions: [
+      "Membangun antarmuka portal jurnal ilmiah medis yang responsif dan terstruktur menggunakan Next.js & Tailwind CSS.",
+      "Mengintegrasikan REST API backend menggunakan TanStack Query (React Query) untuk caching, fetching, dan pengelolaan state data jurnal secara real-time.",
+      "Mengoptimalkan performa pemuatan publikasi ilmiah dan kenyamanan perambanan artikel medis.",
+    ],
+    liveUrl: "https://journal.medikaone.com/",
+  },
+  {
+    id: "prims-sultra",
+    name: "PRIMS SULTRA — Next.js Fullstack Client Template Platform",
+    category: "Fullstack Web & CMS Template",
+    featured: true,
+    layoutType: "large",
+    description:
+      "Pengembangan arsitektur template platform client fullstack menggunakan Next.js yang mencakup portal publik perusahaan dan dashboard CMS Administrator lengkap.",
+    longDescription:
+      "Dibuat dari nol sebagai template kustom berkinerja tinggi untuk proyek klien. Menggabungkan portal depan publik responsif (beranda, galeri aktivitas, layanan, rekrutmen, berita) dan Dashboard Admin CMS komprehensif untuk pengelolaan artikel, pencatatan leads/pesan, manajemen layanan, dan activity log.",
+    role: "Fullstack Developer & UI/UX",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Fullstack", "CMS Admin Dashboard"],
+    stats: [
+      { label: "Role", value: "Fullstack Dev & UI/UX" },
+      { label: "Scope", value: "Public Portal + CMS Admin" },
+    ],
+    keyContributions: [
+      "Merancang UI/UX antarmuka portal publik responsif & dashboard Administrator CMS modern.",
+      "Membangun arsitektur Next.js fullstack dengan manajemen konten artikel, galeri, dan leads tracking.",
+      "Menyediakan sistem template siap pakai untuk berbagai proyek web klien perusahaan.",
+    ],
+    githubUrl: "https://github.com/DarmaCahya",
+  },
+  {
+    id: "laravel-client-company-profiles",
+    name: "Corporate Company Profile Suite (Laravel & Hostinger)",
+    category: "Company Profile",
+    featured: true,
+    layoutType: "horizontal",
+    description:
+      "Pengembangan dan deployment rangkaian website company profile perusahaan berbasis Laravel, MySQL, dan deployment full setup di server Hostinger.",
+    longDescription:
+      "Mengembangkan berbagai situs company profile untuk klien korporat (PT. Satria Enam Putra Perkasa, Sentro Care, Nooren, SAUCA, PT. Soffalux Berkah Jaya, PT. Coway International, Elang Security Nusantara, JGR Garmen, SUTA, Nawa Multi Parts). Proses mencakup UI/UX design, koding Laravel & MySQL, serta penyiapan deployment penuh di Hostinger.",
+    role: "Web Developer (UI/UX, Coding & Deployment)",
+    tags: ["Laravel", "MySQL", "Hostinger", "Tailwind CSS", "UI/UX Design", "SEO"],
+    stats: [
+      { label: "Stack", value: "Laravel & MySQL" },
+      { label: "Deploy", value: "Hostinger Setup" },
+    ],
+    keyContributions: [
+      "Merancang UI/UX antarmuka responsif dan ramah SEO sesuai identitas brand masing-masing klien.",
+      "Membangun sistem web company profile menggunakan Laravel & MySQL database.",
+      "Melakukan deployment full setup di server Hostinger (konfigurasi domain, database, dan environment).",
+    ],
+  },
+  {
     id: "bni-ventures-duluin",
     name: "BNI Ventures & Corporate Portals",
     category: "Fintech & Corporate Platforms",
     featured: true,
-    layoutType: "large",
+    layoutType: "editorial",
     description:
-      "Frontend integration and web platforms for BNI Ventures, Satu Creative dashboard, and corporate web systems at Duluin Group.",
+      "Pengintegrasian antarmuka frontend dan platform web korporat untuk BNI Ventures, Satu Creative dashboard, dan sistem operasional internal.",
     longDescription:
-      "As a Website Developer at Duluin Group, I built and integrated frontend interfaces for high-profile clients including BNI Ventures. Work included building interactive dashboards, landing pages (Satu Creative, Workin), Whistleblowing System (WBS) with case management, and company profiles for clients such as PT. SEPP, Baksya, Elang Security, PT. Coway International, and PT. Soffalux.",
-    role: "Website Developer (PKWT)",
+      "Mengintegrasikan antarmuka frontend dengan API backend untuk portal BNI Ventures, merancang platform Satu Creative (landing page + dashboard operasional internal), serta mengembangkan Whistleblowing System (WBS) dengan fitur manajemen kasus terenkripsi.",
+    role: "Website Developer",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "REST API"],
     stats: [
       { label: "Role", value: "Website Developer" },
       { label: "Impact", value: "15+ Platforms" },
     ],
     keyContributions: [
-      "Integrated frontend interfaces with backend APIs for BNI Ventures ensuring seamless data communication.",
-      "Designed and developed Satu Creative platform (landing page + internal workflow dashboard).",
-      "Engineered Whistleblowing System (WBS) with secure report submission, case tracking, and administrative oversight.",
-      "Revamped Duluin Career Page and built SKI One Service public portal & management dashboard.",
+      "Mengintegrasikan antarmuka frontend dengan API backend untuk BNI Ventures.",
+      "Merancang platform Satu Creative (landing page + dashboard operasional internal).",
+      "Mengembangkan Whistleblowing System (WBS) dengan manajemen kasus terenkripsi.",
     ],
     liveUrl: "https://duluin.com",
     githubUrl: "https://github.com/DarmaCahya",
@@ -237,9 +297,9 @@ export const PROJECTS: Project[] = [
     featured: true,
     layoutType: "horizontal",
     description:
-      "A communal event web app enabling participants to scan QR codes for instant attendance tracking without authentication friction.",
+      "Aplikasi web presensi event komunal yang memungkinkan peserta memindai QR code langsung melalui browser tanpa hambatan autentikasi.",
     longDescription:
-      "Developed a lightweight, highly responsive attendance scanning application for event management (qrhunt.communal.id). Participants scan backend-generated QR codes directly from their browsers for instant verification.",
+      "Mengembangkan aplikasi pemindaian presensi ringan dan sangat responsif untuk manajemen event (qrhunt.communal.id). Peserta memindai QR code secara langsung dari browser mereka.",
     role: "Frontend Developer (Freelance)",
     tags: ["Next.js", "React", "REST API", "Tailwind CSS"],
     stats: [
@@ -247,8 +307,8 @@ export const PROJECTS: Project[] = [
       { label: "Performance", value: "Instant Scan" },
     ],
     keyContributions: [
-      "Built instant browser-based QR scanner interface optimized for mobile viewports.",
-      "Created frictionless attendee verification flow without mandatory account registration.",
+      "Membangun scanner QR instan berbasis browser yang teroptimasi untuk perangkat seluler.",
+      "Merancang alur verifikasi tanpa perlu registrasi akun.",
     ],
     liveUrl: "https://qrhunt.communal.id",
     githubUrl: "https://github.com/DarmaCahya",
@@ -260,9 +320,9 @@ export const PROJECTS: Project[] = [
     featured: true,
     layoutType: "editorial",
     description:
-      "A responsive landing page and information portal for MedikaOne health application.",
+      "Landing page dan portal informasi responsif untuk aplikasi layanan kesehatan MedikaOne.",
     longDescription:
-      "MedikaOne required a clean, trustworthy healthcare landing page focusing on information structure, service accessibility, and cross-device responsiveness.",
+      "MedikaOne memerlukan landing page kesehatan yang dapat dipercaya dengan fokus pada struktur informasi, aksesibilitas layanan, dan responsivitas antar perangkat.",
     role: "Frontend Developer (Freelance)",
     tags: ["React", "Responsive UI", "Tailwind CSS", "SEO"],
     stats: [
@@ -270,8 +330,8 @@ export const PROJECTS: Project[] = [
       { label: "Focus", value: "HealthTech UI" },
     ],
     keyContributions: [
-      "Implemented responsive layouts and fast-loading media assets.",
-      "Structured semantic HTML and clear patient navigation paths.",
+      "Mengimplementasikan tata letak responsif dan aset media yang cepat dimuat.",
+      "Menata struktur HTML semantik dan alur navigasi pengguna yang jernih.",
     ],
     liveUrl: "https://medikaone.com",
     githubUrl: "https://github.com/DarmaCahya",
@@ -283,17 +343,17 @@ export const PROJECTS: Project[] = [
     featured: false,
     layoutType: "compact",
     description:
-      "Mobile-based AI application detecting fruit freshness via image analysis, with Express.js backend on Google Cloud Platform.",
+      "Aplikasi AI berbasis seluler pendeteksi kesegaran buah melalui analisis gambar, dengan backend Express.js di Google Cloud Platform.",
     longDescription:
-      "Developed as the capstone project for Bangkit Academy 2024 (by Google, GoTo, Traveloka). I built the backend service using Express.js and deployed it to Google Cloud Platform to handle photo uploads and model predictions.",
+      "Dikembangkan sebagai proyek capstone Bangkit Academy 2024. Membangun layanan backend menggunakan Express.js dan menyediakannya di Google Cloud Platform.",
     role: "Cloud Computing / Backend Dev",
     tags: ["Express.js", "GCP", "REST API", "Node.js"],
     stats: [
       { label: "Cohort", value: "Bangkit 2024" },
     ],
     keyContributions: [
-      "Built Express.js API handling image payload validation and inference routing.",
-      "Deployed and connected cloud endpoints on Google Cloud Platform.",
+      "Membangun Express.js API untuk penanganan validasi payload gambar dan inferensi AI.",
+      "Menghubungkan endpoint cloud di Google Cloud Platform.",
     ],
     githubUrl: "https://github.com/SryoAjii/FreshBite-Bangkit-Capstone",
   },
@@ -304,14 +364,14 @@ export const PROJECTS: Project[] = [
     featured: false,
     layoutType: "compact",
     description:
-      "Backend system and judge evaluation portal for coffee entry scoring, with automated Selenium test coverage.",
+      "Sistem backend dan portal penilaian juri untuk kompetisi kopi, dengan pengujian otomatis Selenium.",
     longDescription:
-      "Developed the backend system for judges to evaluate coffee competition entries. Features included authentication, event scoring workflow, and E2E automated test suites using Selenium.",
+      "Mengembangkan sistem backend untuk juri mengevaluasi entri kompetisi kopi. Fitur mencakup otentikasi juri dan pengujian otomatis E2E menggunakan Selenium.",
     role: "Backend Developer",
     tags: ["Express.js", "MySQL", "Selenium", "Automated Testing"],
     keyContributions: [
-      "Built judge authentication and scoring data models.",
-      "Authored Selenium automated test suites covering authentication and edge-case inputs.",
+      "Membangun otentikasi juri dan model data nilai peserta.",
+      "Menulis skrip pengujian otomatis Selenium untuk pengujian fitur utama.",
     ],
     githubUrl: "https://github.com/DarmaCahya/Coffee-Event/tree/master",
   },
@@ -322,141 +382,14 @@ export const PROJECTS: Project[] = [
     featured: false,
     layoutType: "compact",
     description:
-      "n8n automation workflow analyzing competitor social media content via Apify scraping and AI content insights.",
+      "Workflow otomatisasi n8n untuk menganalisis konten media sosial kompetitor via Apify scraping dan insight AI.",
     longDescription:
-      "Engineered an automated data extraction workflow using n8n and Apify actors to gather social media metrics, process content with AI model prompts, and export reporting tables to Google Sheets.",
+      "Merancang workflow ekstraksi data otomatis menggunakan n8n dan Apify untuk mengumpulkan metrik sosial media dan mengespor hasil ke Google Sheets.",
     role: "Automation Developer",
     tags: ["n8n", "Apify", "AI Extraction", "Google Sheets"],
     keyContributions: [
-      "Designed automated scraping workflow triggers with error retry logic.",
-      "Integrated AI summary prompts for content sentiment and engagement reporting.",
+      "Merancang trigger scraping otomatisasi dengan retry logic.",
+      "Mengintegrasikan prompt AI untuk pelaporan insight konten.",
     ],
-  },
-];
-
-export const EXPERIENCE_ITEMS: ExperienceItem[] = [
-  {
-    company: "Duluin Group — Bandung",
-    totalPeriod: "Okt 2024 — 8 Okt 2026",
-    location: "Bandung, Indonesia",
-    overallDescription:
-      "Pengembang web utama yang membangun aplikasi web klien, dashboard operasional internal, dan portal korporat. Mengalami peningkatan posisi dari Frontend Intern hingga Website Developer (PKWT).",
-    roles: [
-      {
-        roleTitle: "Website Developer (PKWT)",
-        period: "Feb 2025 — 8 Okt 2026",
-        type: "Full-time Contract (PKWT)",
-        description: "Bertanggung jawab atas pengintegrasian frontend dan pengembangan sistem web korporat klien besar seperti BNI Ventures dan platform internal.",
-        bullets: [
-          "Pengintegrasian antarmuka frontend dengan API backend untuk portal BNI Ventures.",
-          "Merancang dan membangun platform Satu Creative (landing page + dashboard operasional internal).",
-          "Mengembangkan Whistleblowing System (WBS) dengan fitur manajemen kasus dan pelaporan terenkripsi.",
-          "Membangun portal publik & dashboard manajemen SKI One Service serta merombak Halaman Karir Duluin.",
-          "Mengirimkan website performa tinggi & SEO friendly untuk 10+ klien termasuk PT. SEPP, Baksya, Elang Security, JGR Garmen, PT. Soffalux, PT. Coway International, SUTA, dan Nawa Multi Parts.",
-        ],
-        techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Laravel", "REST API"],
-      },
-      {
-        roleTitle: "Frontend Website Developer Intern",
-        period: "Okt 2024 — Jan 2025",
-        type: "Internship",
-        description: "Mengembangkan antarmuka landing page responsif dan membantu pengintegrasian API awal untuk berbagai proyek agensi.",
-        bullets: [
-          "Mengembangkan antarmuka landing page responsif untuk berbagai klien agensi.",
-          "Membangun komponen UI modular dan template tata letak yang digunakan di seluruh tim dev.",
-        ],
-        techStack: ["React", "Next.js", "Tailwind CSS", "JavaScript", "HTML/CSS"],
-      },
-    ],
-  },
-  {
-    company: "PukulEnam — Bandung",
-    totalPeriod: "Sep 2024 — Jun 2025",
-    location: "Bandung / Remote",
-    overallDescription:
-      "Pengembangan web fullstack remote dan frontend intern untuk proyek klien dan platform internal.",
-    roles: [
-      {
-        roleTitle: "Remote Fullstack Developer & Frontend Intern",
-        period: "Sep 2024 — Jun 2025",
-        type: "Contract / Remote Internship",
-        bullets: [
-          "Mengembangkan antarmuka frontend proyek SatriaBIPA menggunakan HTML, CSS, dan Tailwind CSS.",
-          "Membangun sistem news crawler terintegrasi database dan dashboard React untuk proyek Talas.",
-          "Membuat platform web statis untuk pemesanan tur Bali menggunakan React.js.",
-          "Mengembangkan aplikasi web adopsi anjing menggunakan Laravel.",
-        ],
-        techStack: ["React.js", "Tailwind CSS", "Laravel", "JavaScript", "HTML/CSS"],
-      },
-    ],
-  },
-  {
-    company: "Telkom Indonesia",
-    totalPeriod: "Agu 2024 — Okt 2024",
-    location: "Bandung, Indonesia",
-    overallDescription:
-      "Mentee Backend Developer pada Digistar Program oleh PT Telkom Indonesia.",
-    roles: [
-      {
-        roleTitle: "Backend Developer Mentee (Digistar Program)",
-        period: "Agu 2024 — Okt 2024",
-        type: "Mentorship Program",
-        bullets: [
-          "Membangun dan mendokumentasikan RESTful API untuk katalog produk PADI UMKM menggunakan Express.js & MongoDB.",
-          "Melakukan pengujian endpoint API dengan Postman untuk memastikan integritas data request/response.",
-        ],
-        techStack: ["Express.js", "MongoDB", "Postman", "Node.js"],
-      },
-    ],
-  },
-  {
-    company: "Bangkit Academy by Google, GoTo, Traveloka",
-    totalPeriod: "Feb 2024 — Jun 2024",
-    location: "Bandung, Indonesia",
-    overallDescription:
-      "Spesialisasi komputasi awan (Cloud Computing Cohort) Bangkit Academy.",
-    roles: [
-      {
-        roleTitle: "Cloud Computing Cohort",
-        period: "Feb 2024 — Jun 2024",
-        type: "Academy Program",
-        bullets: [
-          "Mengembangkan REST API backend menggunakan Express.js yang terhubung dengan resource Google Cloud Platform.",
-          "Menyelesaikan kurikulum arsitektur cloud praktis dan pengembangan backend.",
-        ],
-        techStack: ["Google Cloud Platform", "Express.js", "Node.js", "REST API"],
-      },
-    ],
-  },
-];
-
-export const PHILOSOPHY_PRINCIPLES: PhilosophyItem[] = [
-  {
-    number: "01",
-    title: "Keep it useful",
-    tagline: "Good UI should solve a problem, not just look impressive.",
-    description:
-      "Flashy visual effects are pointless if users can't achieve their goal quickly. Every element on screen needs a clear functional purpose.",
-  },
-  {
-    number: "02",
-    title: "Make it responsive",
-    tagline: "Interfaces should work naturally across different screen sizes.",
-    description:
-      "Responsiveness means rethinking layouts, touch targets, and reading rhythm so the experience feels native on both mobile viewports and large desktop monitors.",
-  },
-  {
-    number: "03",
-    title: "Keep it maintainable",
-    tagline: "Reusable components and predictable architecture matter.",
-    description:
-      "Code is read far more often than it is written. Clean component boundaries, clear prop types, and structured folder hierarchies make long-term maintenance seamless.",
-  },
-  {
-    number: "04",
-    title: "Sweat the details",
-    tagline: "Small interactions and spacing make a big difference.",
-    description:
-      "Subtle hover cues, balanced typography scales, fast loading feedback, and consistent optical alignment transform average sites into polished products.",
   },
 ];

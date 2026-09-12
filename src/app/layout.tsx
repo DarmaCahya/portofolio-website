@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import AudioPlayer from "@/components/AudioPlayer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     description:
       "Frontend-focused Web Developer who enjoys building things that feel good to use.",
     type: "website",
-    locale: "en_US",
+    locale: "id_ID",
   },
 };
 
@@ -43,11 +44,13 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-[#0c0e12] text-[#f1f5f9] font-sans selection:bg-[#252f44] selection:text-[#f8fafc]">
+      <body className="min-h-full flex flex-col bg-[#090a0d] text-[#e5e7eb] font-sans selection:bg-[#1e293b] selection:text-[#f8fafc]">
         {children}
+        {/* Persistent Background Music Player across all routes */}
+        <AudioPlayer />
       </body>
     </html>
   );
