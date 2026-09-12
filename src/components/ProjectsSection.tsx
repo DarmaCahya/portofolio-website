@@ -49,16 +49,16 @@ export default function ProjectsSection({ isHomePage = true }: ProjectsSectionPr
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
             <div className="flex items-center gap-2 mb-3 text-xs font-mono tracking-widest uppercase text-[#38bdf8]">
-              <span>Karya &amp; Proyek Pilihan</span>
+              <span>Featured Projects</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#f3f4f6]">
-              {isHomePage ? "Proyek Terpilih." : "Koleksi Lengkap Portofolio."}
+              {isHomePage ? "Projects Terpilih." : "Koleksi Lengkap Portofolio."}
             </h2>
           </div>
           <p className="text-sm text-[#9ca3af] max-w-md font-sans leading-relaxed">
             {isHomePage
               ? "Studi kasus aplikasi web produksi, website company profile, template Next.js fullstack, dan pengintegrasian API."
-              : "Arsip proyek produksi, template fullstack, aplikasi freelance, dan eksperimen otomasi."}
+              : "Arsip project produksi, template fullstack, aplikasi freelance, dan eksperimen otomasi."}
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export default function ProjectsSection({ isHomePage = true }: ProjectsSectionPr
               <Search className="w-4 h-4 text-[#6b7280] absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
-                placeholder="Cari nama proyek atau teknologi..."
+                placeholder="Cari nama project atau teknologi..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-2.5 rounded-lg bg-[#111319]/90 border border-[#1c202c] backdrop-blur-sm text-xs font-mono text-[#e5e7eb] placeholder-[#6b7280] focus:outline-none focus:border-[#38bdf8] transition-colors"
@@ -88,7 +88,7 @@ export default function ProjectsSection({ isHomePage = true }: ProjectsSectionPr
                       : "bg-[#111319]/90 text-[#9ca3af] border-[#1c202c] hover:text-white"
                   }`}
                 >
-                  {cat === "All" ? "Semua Proyek" : cat}
+                  {cat === "All" ? "Semua Projects" : cat}
                 </button>
               ))}
             </div>
@@ -163,7 +163,7 @@ export default function ProjectsSection({ isHomePage = true }: ProjectsSectionPr
                   href={`/projects/${project.id}`}
                   className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#161922] border border-[#232938] text-[#f3f4f6] hover:text-[#38bdf8] hover:border-[#38bdf8]/40 font-semibold transition-colors"
                 >
-                  <span>Detail Proyek</span>
+                  <span>Detail Project</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#38bdf8]" />
                 </Link>
 
@@ -190,7 +190,7 @@ export default function ProjectsSection({ isHomePage = true }: ProjectsSectionPr
               href="/projects"
               className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#161922] text-[#f3f4f6] border border-[#262c3d] hover:border-[#38bdf8]/50 font-mono text-xs uppercase tracking-wider transition-all shadow-md"
             >
-              <span>Buka Seluruh Arsip Portofolio ({PROJECTS.length})</span>
+              <span>Buka Seluruh Arsip Projects ({PROJECTS.length})</span>
               <ArrowRight className="w-4 h-4 text-[#38bdf8]" />
             </Link>
           </div>

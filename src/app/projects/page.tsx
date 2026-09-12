@@ -6,8 +6,8 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
-  title: "Arsip Karya & Proyek — Darma Cahya",
-  description: "Koleksi lengkap proyek pengembangan web, sistem korporat, aplikasi freelance, dan eksperimen antarmuka oleh Darma Cahya.",
+  title: "Arsip Projects & Portofolio — Darma Cahya",
+  description: "Koleksi lengkap project pengembangan web, sistem korporat, aplikasi freelance, dan eksperimen antarmuka oleh Darma Cahya.",
 };
 
 export default function ProjectsPage() {
@@ -26,10 +26,10 @@ export default function ProjectsPage() {
               <span>Kembali ke Halaman Utama</span>
             </Link>
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#f8fafc]">
-              Arsip Portofolio &amp; Karya
+              Arsip Projects &amp; Portofolio
             </h1>
             <p className="text-sm text-[#94a3b8] max-w-2xl font-sans leading-relaxed">
-              Kumpulan seluruh studi kasus aplikasi web produksi, pengintegrasian sistem korporat BNI Ventures &amp; Duluin Group, aplikasi freelance (QR Hunt, MedikaOne), proyek capstone Bangkit Academy, dan eksperimen otomasi.
+              Kumpulan seluruh studi kasus aplikasi web produksi, pengintegrasian sistem korporat BNI Ventures &amp; Duluin Group, aplikasi freelance (QR Hunt, MedikaOne), project capstone Bangkit Academy, dan eksperimen otomasi.
             </p>
           </div>
         </div>

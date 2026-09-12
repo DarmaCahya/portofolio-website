@@ -54,10 +54,10 @@ export default function TechStackSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-3 text-xs font-mono tracking-widest uppercase text-[#38bdf8]">
-              <span>Keahlian &amp; Tools</span>
+              <span>Skills &amp; Tools</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#f3f4f6]">
-              Teknologi &amp; Toolkit.
+              Tech Stack &amp; Toolkit.
             </h2>
           </div>
           <p className="text-sm text-[#9ca3af] max-w-md font-sans leading-relaxed">

@@ -54,7 +54,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               className="inline-flex items-center gap-2 text-xs font-mono text-[#9ca3af] hover:text-[#38bdf8] transition-colors py-1 px-3 rounded-md bg-[#111319]/80 border border-[#1c202c]"
             >
               <ArrowLeft className="w-4 h-4 text-[#38bdf8]" />
-              <span>← Kembali ke Portofolio</span>
+              <span>← Kembali ke Projects</span>
             </Link>
 
             {/* Badges & Category */}
@@ -122,7 +122,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               <div className="p-6 sm:p-8 rounded-2xl bg-[#111319]/90 border border-[#1c202c] backdrop-blur-sm space-y-4 shadow-xl">
                 <h2 className="text-base sm:text-lg font-mono font-bold text-[#f3f4f6] flex items-center gap-2.5 border-b border-[#1c202c] pb-3">
                   <Sparkles className="w-4 h-4 text-[#38bdf8]" />
-                  <span>Gambaran Umum &amp; Arsitektur Proyek</span>
+                  <span>Gambaran Umum &amp; Arsitektur Project</span>
                 </h2>
                 <p className="text-sm text-[#cbd5e1] leading-relaxed whitespace-pre-line font-sans">
                   {project.longDescription || project.description}
@@ -176,7 +176,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               {/* Metadata Card */}
               <div className="p-6 rounded-2xl bg-[#111319]/90 border border-[#1c202c] backdrop-blur-sm space-y-4 font-mono text-xs shadow-xl">
                 <div className="pb-3 border-b border-[#1c202c] font-semibold text-[#f3f4f6] text-sm">
-                  Ringkasan Informasi Proyek
+                  Ringkasan Informasi Project
                 </div>
 
                 <div className="space-y-3 text-[#9ca3af]">
@@ -216,7 +216,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
               {/* Related Projects Navigation */}
               <div className="p-6 rounded-2xl bg-[#111319]/90 border border-[#1c202c] backdrop-blur-sm space-y-4 shadow-xl">
                 <div className="font-mono font-semibold text-[#f3f4f6] text-xs uppercase tracking-wider">
-                  Proyek Lainnya:
+                  Projects Lainnya:
                 </div>
                 <div className="space-y-3">
                   {relatedProjects.map((rel) => (

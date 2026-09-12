@@ -6,10 +6,10 @@ import { Icon } from "@iconify/react";
 import { PERSONAL_INFO } from "@/data/portfolio";
 
 const NAV_LINKS = [
-  { label: "Tentang", href: "/#about" },
-  { label: "Keahlian", href: "/#skills" },
-  { label: "Karya", href: "/#projects" },
-  { label: "Kontak", href: "/#contact" },
+  { label: "About", href: "/#about" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {

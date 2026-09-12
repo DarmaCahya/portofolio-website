@@ -144,7 +144,7 @@ export default function HeroSection() {
                 href="/#projects"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#090a0d] font-semibold text-xs font-mono transition-all shadow-lg hover:shadow-cyan-500/20"
               >
-                <span>Lihat Karya &amp; Proyek</span>
+                <span>Lihat Projects</span>
                 <Icon icon="lucide:arrow-down-right" className="w-4 h-4" />
               </a>
 
@@ -153,7 +153,7 @@ export default function HeroSection() {
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#090a0d]/80 hover:bg-[#161922] text-[#e5e7eb] border border-[#262c3d] text-xs font-mono transition-colors backdrop-blur-sm"
               >
                 <Icon icon="lucide:mail" className="w-4 h-4 text-[#9ca3af]" />
-                <span>Kontak &amp; Email</span>
+                <span>Contact &amp; Email</span>
               </a>
             </div>
 

@@ -11,7 +11,7 @@ export default function AboutSection() {
         
         {/* Section Label */}
         <div className="flex items-center gap-2 mb-3 text-xs font-mono tracking-widest uppercase text-[#38bdf8]">
-          <span>Tentang Saya</span>
+          <span>About Me</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">

@@ -17,7 +17,7 @@ export default function ContactSection() {
           <div className="space-y-4 max-w-2xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#161922] border border-[#232938] text-xs font-mono text-[#38bdf8]">
               <Icon icon="lucide:message-square" className="w-3.5 h-3.5" />
-              <span>Kontak &amp; Diskusi</span>
+              <span>Contact &amp; Discussion</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#f3f4f6]">
@@ -25,7 +25,7 @@ export default function ContactSection() {
             </h2>
 
             <p className="text-sm sm:text-base text-[#9ca3af] leading-relaxed font-sans">
-              Tertarik berdiskusi tentang proyek pengembangan frontend, pembuatan website company profile, atau integrasi API? Saya selalu terbuka untuk komunikasi profesional.
+              Tertarik berdiskusi tentang project pengembangan frontend, pembuatan website company profile, atau integrasi API? Saya selalu terbuka untuk komunikasi profesional.
             </p>
           </div>
 
