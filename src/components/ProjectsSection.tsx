@@ -17,6 +17,7 @@ export default function ProjectsSection({ isHomePage = true }: ProjectsSectionPr
 
   const categories = [
     "All",
+    "Platform Rekrutmen & Microservices",
     "Company Profile",
     "Template Fullstack & CMS",
     "Platform Fintek & Korporat",

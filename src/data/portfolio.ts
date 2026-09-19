@@ -199,6 +199,42 @@ export const TECH_CATEGORIES: TechCategory[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: "duluin-jobs",
+    name: "Duluin Jobs — Fullstack Recruitment Platform",
+    category: "Platform Rekrutmen & Microservices",
+    featured: true,
+    layoutType: "large",
+    description:
+      "Platform rekrutmen dan pencarian kerja end-to-end dengan arsitektur backend microservices Go (Golang), dual-frontend Next.js (Applicant & Recruiter Portal), serta sistem verifikasi perusahaan dan pelacakan kandidat.",
+    longDescription:
+      "Duluin Jobs adalah ekosistem platform rekrutmen komprehensif yang dirancang untuk mempertemukan pencari kerja (job seekers) dan recruiter perusahaan. Bertindak sebagai Fullstack Developer, saya merancang dan membangun arsitektur sistem microservices backend menggunakan Go (Golang) dengan pola Database-Per-Service (PostgreSQL, GORM, Redis, API Gateway) serta membangun 2 portal antarmuka web modern menggunakan Next.js (TypeScript & Tailwind CSS) untuk portal Pelamar dan Portal Recruiter/Superadmin.",
+    role: "Fullstack Developer (Go Backend & Next.js Frontend)",
+    tags: [
+      "Go (Golang)",
+      "Next.js",
+      "TypeScript",
+      "Microservices",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Docker",
+      "Redis",
+      "REST API",
+    ],
+    stats: [
+      { label: "Arsitektur", value: "Microservices Go + Dual Next.js" },
+      { label: "Portals", value: "Applicant, Recruiter & Superadmin" },
+      { label: "Peran", value: "Fullstack Developer" },
+    ],
+    keyContributions: [
+      "Merancang arsitektur backend microservices terdistribusi dengan Go (Golang), API Gateway reverse proxy, SSO Cookie Auth, dan PostgreSQL database-per-service (8 microservices: Gateway, User, Company, Job Posting, Applicant Tracking, Jobseeker Profile, Form, Shared).",
+      "Membangun Portal Pelamar (Applicant Web App) berbasis Next.js (App Router), TanStack Query, dan Tailwind CSS untuk eksplorasi lowongan, lamaran instan, dan pelacakan status kandidat.",
+      "Mengembangkan Portal Recruiter & Superadmin CMS untuk manajemen verifikasi perusahaan (Approval/Rejection flow), publikasi lowongan kerja, kustomisasi tahap rekrutmen, dan analisis kandidat global.",
+      "Mengimplementasikan kontainerisasi lingkungan pengembangan menggunakan Docker Compose untuk orchestration seluruh microservices backend dan dual-frontend.",
+    ],
+    liveUrl: "https://dev-jobs.duluin.id/",
+    githubUrl: "https://github.com/DarmaCahya",
+  },
+  {
     id: "journal-medika-one",
     name: "Journal Medika One",
     category: "Teknologi Kesehatan",
