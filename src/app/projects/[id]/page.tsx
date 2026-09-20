@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -39,7 +38,6 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
   return (
     <div className="flex min-h-screen flex-col bg-[#090a0d] text-[#e5e7eb]">
-      <Navbar />
       <main className="flex-1 pt-24">
         
         {/* Top Header Banner */}

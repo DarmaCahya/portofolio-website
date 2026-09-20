@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -13,7 +12,6 @@ export const metadata = {
 export default function ProjectsPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#0d0f12] text-[#e2e8f0]">
-      <Navbar />
       <main className="flex-1 pt-24">
         {/* Page Header */}
         <div className="border-b border-[#1e2634] bg-[#090b0e] py-10">

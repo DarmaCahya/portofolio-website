@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import AudioPlayer from "@/components/AudioPlayer";
 
+import Navbar from "@/components/Navbar";
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
@@ -50,6 +52,8 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${jetBrainsMono.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-[#090a0d] text-[#e5e7eb] font-sans selection:bg-[#1e293b] selection:text-[#f8fafc]">
+        {/* Fixed persistent Navbar across all routes without page-transition re-animations */}
+        <Navbar />
         {children}
         {/* Persistent Background Music Player across all routes */}
         <AudioPlayer />
