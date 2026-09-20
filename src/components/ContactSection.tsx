@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20 md:py-28 bg-section-linear-2 bg-stripe-pattern border-b border-[#1c202c] relative overflow-hidden">
+    <section id="contact" className="pt-16 pb-12 sm:pt-20 sm:pb-14 md:pt-24 md:pb-16 bg-section-linear-2 bg-stripe-pattern relative overflow-hidden">
       {/* Soft Vignette Overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,#090a0d_95%)] pointer-events-none" />
 

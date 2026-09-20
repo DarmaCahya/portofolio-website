@@ -3,7 +3,7 @@ import { PERSONAL_INFO } from "@/data/portfolio";
 
 export default function Footer() {
   return (
-    <footer className="py-10 bg-[#090a0d] border-t border-[#1c202c] text-xs font-mono text-[#6b7280]">
+    <footer className="py-6 sm:py-8 bg-[#090a0d] border-t border-[#1c202c] text-xs font-mono text-[#6b7280]">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           © {new Date().getFullYear()} {PERSONAL_INFO.fullName}. Hak Cipta Dilindungi.
