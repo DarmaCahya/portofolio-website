@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export interface TechItem {
   name: string;
@@ -51,7 +52,13 @@ export default function TechStackSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,#090a0d_95%)] pointer-events-none" />
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 mb-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <motion.div
+          initial={{ opacity: 0, y: 25, filter: "blur(4px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-4"
+        >
           <div>
             <div className="flex items-center gap-2 mb-3 text-xs font-mono tracking-widest uppercase text-[#38bdf8]">
               <span>Skills &amp; Tools</span>
@@ -63,7 +70,7 @@ export default function TechStackSection() {
           <p className="text-sm text-[#9ca3af] max-w-md font-sans leading-relaxed">
             Kumpulan bahasa pemrograman, framework, basis data, dan peralatan yang pernah saya gunakan.
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Marquee Rows Container */}

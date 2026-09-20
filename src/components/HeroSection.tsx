@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { PERSONAL_INFO } from "@/data/portfolio";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLElement>(null);
@@ -75,6 +76,27 @@ export default function HeroSection() {
     };
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 25, filter: "blur(4px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+    },
+  };
+
   return (
     <section
       ref={containerRef}
@@ -99,13 +121,17 @@ export default function HeroSection() {
 
       {/* Content Container */}
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
+        >
           {/* Left Column: Intro (7 Cols) */}
           <div className="lg:col-span-7 space-y-6">
             
             {/* Name & Role Title */}
-            <div className="space-y-3">
+            <motion.div variants={itemVariants} className="space-y-3">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#f3f4f6] leading-[1.1] drop-shadow-md">
                 {PERSONAL_INFO.fullName}
               </h1>
@@ -119,36 +145,49 @@ export default function HeroSection() {
                   <span>Bandung, Indonesia</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Intro Paragraph */}
-            <p className="text-sm sm:text-base text-[#d1d5db] leading-relaxed max-w-2xl font-sans drop-shadow">
+            <motion.p
+              variants={itemVariants}
+              className="text-sm sm:text-base text-[#d1d5db] leading-relaxed max-w-2xl font-sans drop-shadow"
+            >
               Pengembang web yang berfokus membangun antarmuka frontend yang responsif, mengonsumsi API backend, serta menjaga kualitas koding dan struktur antarmuka yang rapi.
-            </p>
+            </motion.p>
 
             {/* Metadata Pills */}
-            <div className="pt-1 flex flex-wrap items-center gap-4 text-xs font-mono text-[#cbd5e1]">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#090a0d]/80 border border-[#232938] backdrop-blur-sm">
+            <motion.div
+              variants={itemVariants}
+              className="pt-1 flex flex-wrap items-center gap-4 text-xs font-mono text-[#cbd5e1]"
+            >
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#090a0d]/80 border border-[#232938] backdrop-blur-sm hover:border-[#38bdf8]/50 transition-colors">
                 <Icon icon="lucide:graduation-cap" className="w-4 h-4 text-[#38bdf8]" />
                 <span>S1 Informatika — Telkom University</span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#090a0d]/80 border border-[#232938] backdrop-blur-sm">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#090a0d]/80 border border-[#232938] backdrop-blur-sm hover:border-emerald-500/50 transition-colors">
                 <Icon icon="lucide:briefcase" className="w-4 h-4 text-emerald-400" />
                 <span>Website Developer</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#232938]/80">
-              <a
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap items-center gap-4 pt-4 border-t border-[#232938]/80"
+            >
+              <motion.a
+                whileHover={{ scale: 1.04, translateY: -2 }}
+                whileTap={{ scale: 0.96 }}
                 href="/#projects"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#090a0d] font-semibold text-xs font-mono transition-all shadow-lg hover:shadow-cyan-500/20"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#38bdf8] hover:bg-[#7dd3fc] text-[#090a0d] font-semibold text-xs font-mono transition-all shadow-lg hover:shadow-cyan-500/25"
               >
                 <span>Lihat Projects</span>
                 <Icon icon="lucide:arrow-down-right" className="w-4 h-4" />
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.04, translateY: -2 }}
+                whileTap={{ scale: 0.96 }}
                 href="/CV_I_Made_Darma_Cahya_Adyatma.pdf"
                 download="CV_I_Made_Darma_Cahya_Adyatma.pdf"
                 target="_blank"
@@ -157,23 +196,33 @@ export default function HeroSection() {
               >
                 <Icon icon="lucide:download" className="w-4 h-4 text-[#38bdf8]" />
                 <span>Download CV</span>
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.04, translateY: -2 }}
+                whileTap={{ scale: 0.96 }}
                 href="/#contact"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#090a0d]/80 hover:bg-[#161922] text-[#e5e7eb] border border-[#262c3d] text-xs font-mono transition-colors backdrop-blur-sm"
               >
                 <Icon icon="lucide:mail" className="w-4 h-4 text-[#9ca3af]" />
                 <span>Contact &amp; Email</span>
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
 
           </div>
 
           {/* Right Column: Clean Personal Photo Frame (5 Cols) */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="w-full max-w-sm rounded-xl overflow-hidden bg-[#111319]/90 border border-[#232938] shadow-2xl backdrop-blur-md group">
-              <div className="relative aspect-[4/5] w-full overflow-hidden">
+          <motion.div
+            variants={itemVariants}
+            className="lg:col-span-5 flex justify-center lg:justify-end"
+          >
+            <motion.div
+              whileHover={{ scale: 1.02, rotate: 0.5 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="w-full max-w-sm rounded-xl overflow-hidden bg-[#111319]/90 border border-[#232938] shadow-2xl backdrop-blur-md group relative"
+            >
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#38bdf8]/20 to-purple-500/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none" />
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl">
                 <Image
                   src={PERSONAL_INFO.photoPath}
                   alt={PERSONAL_INFO.fullName}
@@ -183,11 +232,12 @@ export default function HeroSection() {
                   priority
                 />
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
+

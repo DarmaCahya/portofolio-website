@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { PERSONAL_INFO } from "@/data/portfolio";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
   { label: "About", href: "/#about" },
@@ -51,14 +52,17 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-[#9ca3af] hover:text-[#38bdf8] transition-colors py-1 relative font-medium"
+                className="text-[#9ca3af] hover:text-[#38bdf8] transition-colors py-1 relative font-medium group"
               >
-                {link.label}
+                <span>{link.label}</span>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#38bdf8] group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </nav>
 
-          <a
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href="/CV_I_Made_Darma_Cahya_Adyatma.pdf"
             download="CV_I_Made_Darma_Cahya_Adyatma.pdf"
             target="_blank"
@@ -67,7 +71,7 @@ export default function Navbar() {
           >
             <Icon icon="lucide:download" className="w-3.5 h-3.5" />
             <span>Download CV</span>
-          </a>
+          </motion.a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -82,41 +86,50 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0d0f14] border-b border-[#1c202c] px-6 py-5 space-y-4 shadow-xl">
-          <nav className="flex flex-col space-y-3 font-mono text-xs">
-            {NAV_LINKS.map((link) => (
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0, y: -10 }}
+            animate={{ opacity: 1, height: "auto", y: 0 }}
+            exit={{ opacity: 0, height: 0, y: -10 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden bg-[#0d0f14] border-b border-[#1c202c] px-6 py-5 space-y-4 shadow-xl overflow-hidden"
+          >
+            <nav className="flex flex-col space-y-3 font-mono text-xs">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-[#9ca3af] hover:text-[#38bdf8] py-1 font-medium transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+            <div className="pt-2 flex flex-col gap-2">
               <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-[#9ca3af] hover:text-[#38bdf8] py-1 font-medium transition-colors"
+                href="/CV_I_Made_Darma_Cahya_Adyatma.pdf"
+                download="CV_I_Made_Darma_Cahya_Adyatma.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-mono text-[#38bdf8] bg-[#161922] border border-[#38bdf8]/40 rounded-md hover:border-[#38bdf8] transition-colors font-medium"
               >
-                {link.label}
+                <Icon icon="lucide:download" className="w-3.5 h-3.5" />
+                <span>Download CV</span>
               </a>
-            ))}
-          </nav>
-          <div className="pt-2 flex flex-col gap-2">
-            <a
-              href="/CV_I_Made_Darma_Cahya_Adyatma.pdf"
-              download="CV_I_Made_Darma_Cahya_Adyatma.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-mono text-[#38bdf8] bg-[#161922] border border-[#38bdf8]/40 rounded-md hover:border-[#38bdf8] transition-colors font-medium"
-            >
-              <Icon icon="lucide:download" className="w-3.5 h-3.5" />
-              <span>Download CV</span>
-            </a>
-            <a
-              href={`mailto:${PERSONAL_INFO.email}`}
-              className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-mono text-[#f3f4f6] bg-[#161922] border border-[#262c3d] rounded-md hover:border-[#38bdf8]/50 transition-colors"
-            >
-              <span>{PERSONAL_INFO.email}</span>
-              <Icon icon="lucide:arrow-up-right" className="w-3.5 h-3.5 opacity-80" />
-            </a>
-          </div>
-        </div>
-      )}
+              <a
+                href={`mailto:${PERSONAL_INFO.email}`}
+                className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-mono text-[#f3f4f6] bg-[#161922] border border-[#262c3d] rounded-md hover:border-[#38bdf8]/50 transition-colors"
+              >
+                <span>{PERSONAL_INFO.email}</span>
+                <Icon icon="lucide:arrow-up-right" className="w-3.5 h-3.5 opacity-80" />
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
+
