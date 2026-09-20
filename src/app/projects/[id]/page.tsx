@@ -1,5 +1,4 @@
 import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PROJECTS } from "@/data/portfolio";
@@ -37,8 +36,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   const relatedProjects = PROJECTS.filter((p) => p.id !== project.id).slice(0, 3);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#090a0d] text-[#e5e7eb]">
-      <main className="flex-1 pt-24">
+    <div className="flex flex-col bg-[#090a0d] text-[#e5e7eb] pt-24">
         
         {/* Top Header Banner */}
         <div className="border-b border-[#1c202c] bg-section-linear-1 bg-grid-pattern relative overflow-hidden py-12 md:py-16">
@@ -242,8 +240,6 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
         {/* Contact CTA */}
         <ContactSection />
-      </main>
-      <Footer />
     </div>
   );
 }

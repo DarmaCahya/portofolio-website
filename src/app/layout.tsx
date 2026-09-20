@@ -4,6 +4,7 @@ import "./globals.css";
 import AudioPlayer from "@/components/AudioPlayer";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -54,7 +55,15 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#090a0d] text-[#e5e7eb] font-sans selection:bg-[#1e293b] selection:text-[#f8fafc]">
         {/* Fixed persistent Navbar across all routes without page-transition re-animations */}
         <Navbar />
-        {children}
+
+        {/* Main animated view container */}
+        <main className="flex-1 flex flex-col">
+          {children}
+        </main>
+
+        {/* Persistent static Footer across all routes */}
+        <Footer />
+
         {/* Persistent Background Music Player across all routes */}
         <AudioPlayer />
       </body>
